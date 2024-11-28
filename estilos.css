@@ -1,0 +1,119 @@
+/* estilos.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffc3da;
+    color: #333;
+}
+
+header {
+    background-color: #ff6da4;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding predeterminado del <ul> */
+    text-align: left; /* Alinea el contenido a la izquierda */
+    margin: 0 auto; /* Centra el <ul> dentro de su contenedor */
+    width: fit-content; /* Ajusta el ancho al contenido */
+}
+
+li {
+    padding: 10px 0; /* Espaciado entre los elementos de la lista */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #ff6da4;
+    color: white;
+    text-align: center;
+    padding: 4px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+h2{
+    color: palevioletred;
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+}
+
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+#productos {
+    background-color: #ffe6e6;
+}
+
+.producto {
+    display: inline-block;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    text-align: left;
+    width: 250px;
+}
+
+.producto img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.producto h3 {
+    margin: 0.5rem 0;
+}
+
+.precio {
+    font-size: 1.2rem;
+    color: #ff6666;
+    font-weight: bold;
+}
+
+button {
+    background-color: #ff6da4;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff6da4;
+}

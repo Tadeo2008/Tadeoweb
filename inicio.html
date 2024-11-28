@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - SpicyGummies.com</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <style>
+        /* Estilo del contenedor del carrusel */
+        .carousel {
+        position: relative;
+        width: 80%;
+        max-width: 800px;
+        margin: auto;
+        overflow: hidden;
+        border-radius: 10px;
+        }
+        
+        h1 {
+        text-align: center;
+        }
+        
+        /* Imágenes dentro del carrusel */
+        .carousel-images {
+        display: flex;
+        transition: transform 0.5s ease-in-out; /* Transición suave */
+        }
+        
+        .carousel-images img {
+        width: 100%;
+        flex-shrink: 0;
+        height: 500px; /* Define un alto estándar para las imágenes */
+        object-fit: contain; /* Evita que las imágenes se deformen */
+        }
+        
+        /* Flechas de navegación */
+        .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 20px;
+        z-index: 10;
+        }
+        
+        .carousel-button.left {
+        left: 10px;
+        }
+        
+        .carousel-button.right {
+        right: 10px;
+        }
+        
+        .carousel-button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        }
+        </style>
+    <header>
+        <h1>Nosotros</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="mision.html">Misión</a></li>
+                <li><a href="vision.html">Visión</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+                <li><a href="producto.html">Productos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Nosotros</h2>
+            <p>En SpicyGummies, nuestro viaje comenzo una tarde que nosotros estabamos cansados de iniciar negocios fallidos, y entonces se nos ocurrio la idea de la venta de gomitas, pero para hacerlo mas especial le dimos un toque picante para darle un sabor explosivo y acido a la vez para que sea un sabor unico y diferente a los demas</p>
+            <h2>Historia y Valores</h2>
+            <p>Fundada en 2023, SpicyGummies nació con la visión de transformar una idea y crear una vision que teniamos entre amigos, nosotros nos consideramos una empresa con nuestros valores bien marcados los cuales nos representamos por el valor del respeto el cual tenemos nosotros como empresa hacia el cliente por que para nosotros es importante que piensa nuestro consumidor pero con respeto todo.</p>
+            <ul>
+                <li>Calidad: Nos esforzamos por ofrecer las mejores gomitas con gomitas de calidad y dalsa especial de nuestros provedores confiables</li>
+                <li>Sostenibilidad: Nuestras ventas fomentan el consumo local en comparacion con otras empresas y ayuda a promoverlo, a si mismo proveemos empleso para nuestros acapulqueños y acapulqeñas.</li>
+                <li>Comunicación: Para nuestra marca es importante una comunicacion respetuosa con nuestros clientes y en la empresa, no toleramos ninguna falta de respeto en nuestras instalaciones y se corrigira atodo aquel que sea irrespestuoso.</li>
+                <li>Compromiso: Estamos esforzandonos por dejar el nombre de nuestra ciudad en alto y nos comprometemos a ayudar a el pueblo en cuestiones de apoyo y en desastres naturales al igual que en situaciones dificiles por las cuales el puerto este sufriendo.</li>
+            </ul>
+            <div class="carousel">
+                <button class="carousel-button left" onclick="moveSlide(-1)">&#8249;</button>
+                <div class="carousel-images">
+                <img src="imagen1.png" alt="Imagen 1">
+                <img src="Gomitas1.jpg" alt="Imagen 2">
+                <img src="Gomitas2.jpg" alt="Imagen 3">
+                <img src="Gomitas3.jpg" alt="Imagen 4">
+                <img src="Gomitas4.jpg" alt="Imagen 5">
+                </div>
+                <button class="carousel-button right" onclick="moveSlide(1)">&#8250;</button>
+                </div>
+            <img src="logo3.jpeg" alt="Imagen de Nosotros">
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 SpicyGummies. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        const carouselImages = document.querySelector('.carousel-images');
+        const images = document.querySelectorAll('.carousel-images img');
+        let currentIndex = 0;
+        const totalImages = images.length;
+        const slideInterval = 3000; // Tiempo en milisegundos para la transición automática
+        let interval;
+        
+        // Mover las imágenes manualmente
+        function moveSlide(direction) {
+        currentIndex += direction;
+        
+        if (currentIndex < 0) {
+        currentIndex = totalImages - 1; // Ir al último
+        } else if (currentIndex >= totalImages) {
+        currentIndex = 0; // Regresar al primero
+        }
+        
+        updateSlide();
+        resetInterval(); // Reiniciar la transición automática después de la interacción
+        }
+        
+        // Actualizar la posición del carrusel
+        function updateSlide() {
+        const offset = -currentIndex * 100;
+        carouselImages.style.transform = `translateX(${offset}%)`;
+        }
+        
+        // Transición automática
+        function startAutoSlide() {
+        interval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalImages;
+        updateSlide();
+        }, slideInterval);
+        }
+        
+        // Reiniciar el temporizador de la transición automática
+        function resetInterval() {
+        clearInterval(interval);
+        startAutoSlide();
+        }
+        
+        // Iniciar la transición automática al cargar la página
+        startAutoSlide();
+        </script>
+        </body>
+        </html>
